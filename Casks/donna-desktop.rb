@@ -1,6 +1,6 @@
 cask "donna-desktop" do
   version "0.1.0"
-  sha256 "6261e8e658a2070171bc464ef932deb7167eda1a55dd8c1a0c6cf29c696def3e"
+  sha256 "b2cb0f9861f7d5e972a13fd71d31f2bbc58ce8e2dfb67fa010fb76b0873d9ae5"
 
   url "https://github.com/camerhann/donna-desktop/releases/download/v#{version}/donna-desktop-#{version}-arm64.dmg"
   name "Donna Desktop"
@@ -16,6 +16,13 @@ cask "donna-desktop" do
 
   app "Donna Desktop.app"
 
+  postflight do
+    # Remove quarantine attribute to avoid Gatekeeper warning
+    system_command "/usr/bin/xattr",
+                   args: ["-cr", "#{appdir}/Donna Desktop.app"],
+                   sudo: false
+  end
+
   zap trash: [
     "~/Library/Application Support/Donna Desktop",
     "~/Library/Preferences/com.donna.desktop.plist",
@@ -23,6 +30,8 @@ cask "donna-desktop" do
   ]
 
   caveats <<~EOS
+    On first launch, right-click the app and select "Open" to bypass Gatekeeper.
+
     Donna Desktop requires Claude Code CLI for AI features:
       npm install -g @anthropic-ai/claude-code
 
