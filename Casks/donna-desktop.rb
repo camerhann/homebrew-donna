@@ -1,6 +1,6 @@
 cask "donna-desktop" do
   version "0.1.0"
-  sha256 "e6fb5cdea264507a2c2c3735d464e9290eddc38698cb46f9e18dd4db6fb88640"
+  sha256 "3200eea8450313a22ae567b93e8126441c9b7190953ce2cd450e61a6a2f333a7"
 
   url "https://github.com/camerhann/donna-desktop/releases/download/v#{version}/donna-desktop-#{version}-arm64.dmg"
   name "Donna Desktop"
