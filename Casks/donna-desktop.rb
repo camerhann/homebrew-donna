@@ -2,7 +2,7 @@ cask "donna-desktop" do
   version "0.1.0"
   sha256 "6261e8e658a2070171bc464ef932deb7167eda1a55dd8c1a0c6cf29c696def3e"
 
-  url "https://github.com/camerhann/donna-desktop/releases/download/v#{version}/Donna.Desktop-#{version}-arm64.dmg"
+  url "https://github.com/camerhann/donna-desktop/releases/download/v#{version}/donna-desktop-#{version}-arm64.dmg"
   name "Donna Desktop"
   desc "AI-powered terminal with personality - Claude, Gemini, and custom agents"
   homepage "https://github.com/camerhann/donna-desktop"
